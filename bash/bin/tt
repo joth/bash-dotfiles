@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+## Connect to a specific tmux session, if it exists. If a tmuxinator
+## workspace exists with that name, start it and thus creating a tmux session.
+## Displays a list of available session names if run without parameters.
+##
+## Requires tmux and tmuxinator installed and in $PATH.
+if [ $# -ne 1 ]; then
+  tmux_sessions=$(tmux ls 2> /dev/null | cut -d ":" -f 1)
+  mux_sessions=$(mux list | grep -v "^tmuxinator")
+  (
+    echo "tmux: $tmux_sessions"
+    echo "mux: $mux_sessions"
+  ) | column -t
+  exit
+fi
+
+session=$1
+
+if tmux has-session -t "$session" 2> /dev/null; then
+  if [ -z "$TMUX" ]; then
+    tmux -u attach-session -t "$session"
+  else
+    tmux -u switch-client -t "$session"
+  fi
+  exit
+fi
+
+if ! mux start "$session" > /dev/null; then
+ echo "ERROR: No session found in tmux or tmuxinator for $session"
+ exit 1
+fi
