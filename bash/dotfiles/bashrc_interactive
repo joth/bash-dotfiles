@@ -8,8 +8,8 @@ shopt -s histappend
 HISTFILE="${HOME}/.history/$(date -u +%Y/%m/%d)"
 mkdir -p "$(dirname "$HISTFILE")"
 HISTCONTROL=ignoreboth
-HISTFILESIZE=5000
-HISTSIZE=5000
+HISTFILESIZE=10000
+HISTSIZE="$HISTFILESIZE"
 PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 
 #-------------------------------------------------------------------------------
