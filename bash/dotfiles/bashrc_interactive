@@ -10,7 +10,7 @@ mkdir -p "$(dirname "$HISTFILE")"
 HISTCONTROL=ignoreboth
 HISTFILESIZE=5000
 HISTSIZE=5000
-PROMPT_COMMAND="history -a"
+PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 
 #-------------------------------------------------------------------------------
 # Aliases
