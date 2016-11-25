@@ -1,0 +1,10 @@
+#-------------------------------------------------------------------------------
+# Shell & environment configuration
+#-------------------------------------------------------------------------------
+shopt -s histappend
+HISTFILE="${HOME}/.history/$(date -u +%Y/%m/%d)"
+mkdir -p "$(dirname "$HISTFILE")"
+HISTCONTROL=ignoreboth
+HISTFILESIZE=5000
+HISTSIZE=5000
+PROMPT_COMMAND="history -a"
