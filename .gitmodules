@@ -1,0 +1,3 @@
+[submodule "bash/modules/bashrc_dispatch"]
+	path = bash/modules/bashrc_dispatch
+	url = git@github.com:josephwecker/bashrc_dispatch.git
