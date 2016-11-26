@@ -50,14 +50,14 @@ function main () {
   done
 
   dotfiles="$(find "$BASH_DOTFILES" -maxdepth 1 -type f -printf "%f\n")"
-  for dotfile in ${dotfiles}
+  for dotfile in $dotfiles
   do
     create_symbolic_link "$BASH_DOTFILES/$dotfile" "$HOME/.$dotfile"
   done
 
   mkdir -p "$HOME/bin"
   executables="$(find "$BASH_PRIVATE_BIN" -maxdepth 1 -type f -printf "%f\n")"
-  for executable in "${executables[@]}"
+  for executable in "$executables"
   do
     create_symbolic_link "$BASH_PRIVATE_BIN/$executable" "$HOME/bin/$executable"
   done

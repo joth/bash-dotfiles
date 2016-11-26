@@ -5,7 +5,7 @@ readonly BASHRC_INTERACTIVE_INCLUDES="$BASHRC_INTERACTIVE/interactive"
 # Shell & environment configuration
 #-------------------------------------------------------------------------------
 shopt -s histappend
-HISTFILE="${HOME}/.history/$(date -u +%Y/%m/%d)"
+HISTFILE="$HOME/.history/$(date -u +%Y/%m/%d)"
 mkdir -p "$(dirname "$HISTFILE")"
 HISTCONTROL=ignoreboth
 HISTFILESIZE=10000
@@ -16,10 +16,10 @@ PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 # Aliases / Local bin
 #-------------------------------------------------------------------------------
 includes="$(find "$BASHRC_INTERACTIVE_INCLUDES" -maxdepth 1 -type f)"
-for include in "${includes[@]}"; do
+for include in "$includes"; do
   source "$include"
 done
 
-if [ -d "${HOME}/bin" ]; then
-  PATH="${HOME}/bin:${PATH}"
+if [ -d "$HOME/bin" ]; then
+  PATH="$HOME/bin:$PATH"
 fi
