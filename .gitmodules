@@ -1,3 +1,9 @@
 [submodule "bash/modules/bashrc_dispatch"]
 	path = bash/modules/bashrc_dispatch
 	url = git@github.com:josephwecker/bashrc_dispatch.git
+[submodule "vim/modules/vim-pathogen"]
+	path = vim/modules/vim-pathogen
+	url = git@github.com:tpope/vim-pathogen.git
+[submodule "vim/modules/syntastic"]
+	path = vim/modules/syntastic
+	url = git@github.com:vim-syntastic/syntastic.git

@@ -16,6 +16,7 @@ readonly __DIR__="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 readonly BASH_PROFILE="$__DIR__/bash/modules/bashrc_dispatch/bashrc_dispatch"
 readonly BASH_DOTFILES="$__DIR__/bash/dotfiles"
 readonly BASH_PRIVATE_BIN="$__DIR__/bash/bin"
+readonly VIM_CONFIGURATION="$__DIR__/vim"
 
 #
 # Script dependencies
@@ -57,10 +58,12 @@ function main () {
 
   mkdir -p "$HOME/bin"
   executables="$(find "$BASH_PRIVATE_BIN" -maxdepth 1 -type f -printf "%f\n")"
-  for executable in "$executables"
+  for executable in $executables
   do
     create_symbolic_link "$BASH_PRIVATE_BIN/$executable" "$HOME/bin/$executable"
   done
+
+  create_symbolic_link "$VIM_CONFIGURATION" "$HOME/.vim"
 }
 
 main
