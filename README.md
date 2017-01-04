@@ -1,7 +1,9 @@
 # bash-dotfiles
 
 ## Platforms
-Tested on Windows 7 with Cygwin.
+Tested on
+* Windows 7 with Cygwin.
+* Ubuntu 16.04.1 LTS
 
 ## Installation
 
