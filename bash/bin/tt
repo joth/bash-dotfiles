@@ -27,6 +27,6 @@ if tmux has-session -t "$session" 2> /dev/null; then
 fi
 
 if ! mux start "$session" > /dev/null; then
- echo "ERROR: No session found in tmux or tmuxinator for $session"
- exit 1
+  echo "ERROR: No session found in tmux or tmuxinator for $session"
+  exit 1
 fi
