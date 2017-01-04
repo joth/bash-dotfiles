@@ -1,0 +1,13 @@
+function gt() {
+  local directory_name
+  directory_name=$1
+
+  local directory
+  directory=$(\
+    find \
+      -type d \
+      -name "*$directory_name*"
+  )
+
+  cd "$directory"
+}
