@@ -11,6 +11,7 @@ HISTCONTROL=ignoreboth
 HISTFILESIZE=10000
 HISTSIZE="$HISTFILESIZE"
 PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+shopt -s checkwinsize
 
 #-------------------------------------------------------------------------------
 # Aliases / Local bin
