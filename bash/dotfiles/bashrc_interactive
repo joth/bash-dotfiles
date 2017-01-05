@@ -17,7 +17,7 @@ shopt -s checkwinsize
 # Aliases / Local bin
 #-------------------------------------------------------------------------------
 includes="$(find "$BASHRC_INTERACTIVE_INCLUDES" -maxdepth 1 -type f)"
-for include in "$includes"; do
+for include in $includes; do
   source "$include"
 done
 
