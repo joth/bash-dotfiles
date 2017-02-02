@@ -11,3 +11,7 @@ function gt() {
 
   cd "$directory"
 }
+
+histgrep () {
+  grep -r "$@" "$HOME/.history"
+}
